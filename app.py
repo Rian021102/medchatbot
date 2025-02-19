@@ -11,8 +11,8 @@ from langchain.chains.question_answering import load_qa_chain
 st.set_page_config(page_title="Chat with Medical Documents")
 
 # Environment Variables and Initial Setup
-api_key = os.getenv("OPENAI_API_KEY")
-ACTIVELOOP_TOKEN = os.getenv("ACTIVELOOP_TOKEN")
+api_key = st.secrets["OPENAI_API_KEY"]
+ACTIVELOOP_TOKEN = st.secrets["ACTIVELOOP_TOKEN"]
 embeddings_model = OpenAIEmbeddings()
 llm = ChatOpenAI(model_name="gpt-4o", max_tokens=1000)
 
