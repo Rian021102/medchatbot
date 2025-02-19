@@ -14,7 +14,7 @@ st.set_page_config(page_title="Chat with Medical Documents")
 api_key = st.secrets["OPENAI_API_KEY"]
 ACTIVELOOP_TOKEN = st.secrets["ACTIVELOOP_TOKEN"]
 embeddings_model = OpenAIEmbeddings()
-llm = ChatOpenAI(model_name="gpt-4o", max_tokens=1000)
+llm = ChatOpenAI(model_name="gpt-4o-mini", max_tokens=1000)
 
 # Initialize DeepLake DB and related session state setup
 if 'retriever' not in st.session_state or 'assistant' not in st.session_state:

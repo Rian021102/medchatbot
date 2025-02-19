@@ -9,7 +9,7 @@ from langchain.chains.question_answering import load_qa_chain
 api_key = os.environ.get("OPENAI_API_KEY")
 embeddings_model = OpenAIEmbeddings()
 ACTIVELOOP_TOKEN = os.getenv("ACTIVELOOP_TOKEN")
-llm = ChatOpenAI(model_name = "gpt-4o", max_tokens = 1000)
+llm = ChatOpenAI(model_name = "gpt-4o-mini", max_tokens = 1000)
 
 
 db=DeepLake(dataset_path="hub://rian/medicaldoc",embedding=embeddings_model,read_only=True)
