@@ -8,7 +8,13 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.chains.question_answering import load_qa_chain
 
-st.set_page_config(page_title="Chat with Medical Documents")
+st.set_page_config(page_title="Asthmatic Information A.I", page_icon=":lungs:")
+#make a sidebar with information about the project
+st.sidebar.title("Asthmatic Information A.I")
+st.sidebar.write("This project is to provide information about asthma, its treatments and how to manage it.")
+st.sidebar.write("The information is collected from Indonesia (from the Ministry of Health), Singapore  and more information will be added.")
+st.sidebar.write("Let's connect: [LinkedIn](https://www.linkedin.com/in/rianrachmanto/)")
+
 
 # Environment Variables and Initial Setup
 api_key = st.secrets["OPENAI_API_KEY"]
