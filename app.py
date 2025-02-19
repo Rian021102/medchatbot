@@ -19,7 +19,7 @@ llm = ChatOpenAI(model_name="gpt-4o-mini", max_tokens=1000)
 # Initialize DeepLake DB and related session state setup
 if 'retriever' not in st.session_state or 'assistant' not in st.session_state:
     db = DeepLake(dataset_path="hub://rian/medicaldoc", embedding=embeddings_model, read_only=True)
-    retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 4})
+    retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 10})
     chain = load_qa_chain(llm, chain_type="stuff")
     st.session_state['retriever'] = retriever
     st.session_state['assistant'] = chain

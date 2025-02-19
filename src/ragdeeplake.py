@@ -11,13 +11,13 @@ embeddings_model = OpenAIEmbeddings()
 ACTIVELOOP_TOKEN = os.getenv("ACTIVELOOP_TOKEN")
 
 
+def create_vector(file_path):
+    loader=PyPDFLoader(file_path=file_path)
+    docs=loader.load()
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=20)
+    docs = text_splitter.split_documents(docs)
+    db=DeepLake.from_documents(docs,dataset_path="hub://rian/medicaldoc",embedding=embeddings_model,overwrite=False)
+    return db
 
-loader=PyPDFLoader(file_path="/Users/rianrachmanto/miniforge3/project/Simple_AI_Agent/src/medresearch/Keputusan_Menteri_Kesehatan_RI_Tentang_Pedoman_Pengendalian_Asma1.pdf")
-docs=loader.load()
-
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-docs = text_splitter.split_documents(docs)
-
-db=DeepLake.from_documents(docs,dataset_path="hub://rian/medicaldoc",embedding=embeddings_model,overwrite=True)
-
-#set retriever
+file_path="/Users/rianrachmanto/miniforge3/project/docurag/documents/asthma-management-(nov-2020).pdf"
+db = create_vector(file_path)
