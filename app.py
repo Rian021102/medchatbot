@@ -13,6 +13,7 @@ st.set_page_config(page_title="Asthmatic Information A.I", page_icon=":lungs:")
 st.sidebar.title("Asthmatic Information A.I")
 st.sidebar.write("This project is to provide information about asthma, its treatments and how to manage it.")
 st.sidebar.write("The information is collected from Indonesia (from the Ministry of Health), Singapore  and more information will be added.")
+st.sidebar.write("Hi, I'm Rian. I'm a Machine Learning/A.I engineer who built this app. Hit me up for collaborations.")
 st.sidebar.write("Let's connect: [LinkedIn](https://www.linkedin.com/in/rianrachmanto/)")
 
 
