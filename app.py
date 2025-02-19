@@ -61,7 +61,7 @@ def process_input():
         st.session_state['messages'].append((answer, False))
 
 def setup_page():
-    st.header("Chat with Medical Documents")
+    st.header("Asthmatic Information A.I")
     st.text_input("Message", key="user_input", on_change=process_input)
     display_messages()
 
